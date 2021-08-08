@@ -1,0 +1,41 @@
+{
+    "name": "@mangosteen/digest-stream",
+    "version": "1.0.0",
+    "description": "Compute hash or HMAC using a transform stream.",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "engines": {
+        "node": ">=10"
+    },
+    "scripts": {
+        "build": "tsc",
+        "test-publish-npm": "npm pack",
+        "publish-npm": "npm publish --access public",
+        "prepare": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/paya-cz/digest-stream.git"
+    },
+    "keywords": [
+        "stream",
+        "digest",
+        "hash",
+        "hmac",
+        "crypto",
+        "sha256",
+        "sha1",
+        "md5"
+    ],
+    "author": "Paya",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/paya-cz/digest-stream/issues"
+    },
+    "homepage": "https://github.com/paya-cz/digest-stream#readme",
+    "devDependencies": {
+        "@tsconfig/node10": "^1.0.8",
+        "@types/node": "^10.17.60",
+        "typescript": "^4.3.5"
+    }
+}
