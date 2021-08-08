@@ -1,10 +1,10 @@
 import { Hash, Hmac } from 'crypto';
 import { Transform } from 'stream';
 
-export type DigestTransform = Transform & { digest: () => Buffer; };
+export type DigestStream = Transform & { digest: () => Buffer; };
 
-export function createDigestStream(digest: Hash | Hmac): DigestTransform {
-    const transform: DigestTransform = new Transform({
+export function createDigestStream(digest: Hash | Hmac): DigestStream {
+    const transform: DigestStream = new Transform({
         transform(chunk, encoding: any, callback) {
             if (typeof chunk === 'string') {
                 digest.update(chunk, encoding);
