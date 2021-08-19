@@ -11,7 +11,7 @@ With [npm](https://www.npmjs.com/) do:
 # Usage
 
 ```js
-import { createDigestStream } from '@mangosteen/digest-stream';
+import { DigestStream } from '@mangosteen/digest-stream';
 import crypto from 'crypto';
 import fs from 'fs';
 import { promisify } from 'util';
@@ -19,7 +19,9 @@ import { promisify } from 'util';
 const pipeline = promisify(stream.pipeline);
 
 (async () => {
-    const digestStream = createDigestStream(crypto.createHash('sha256'));
+    const digestStream = new DigestStream({
+        digest: crypto.createHash('sha256'),
+    });
 
     await pipeline([
         fs.createReadStream('./shakespeare.txt'),
@@ -27,6 +29,7 @@ const pipeline = promisify(stream.pipeline);
         // ...
     ]);
 
-    console.log(digestStream.digest().toString('hex'));
+    const sha256: string = digestStream.digest().toString('hex');
+    console.log(sha256);
 })();
 ```

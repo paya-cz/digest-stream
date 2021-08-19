@@ -1,6 +1,6 @@
 {
     "name": "@mangosteen/digest-stream",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "description": "Compute hash or HMAC using a transform stream.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
